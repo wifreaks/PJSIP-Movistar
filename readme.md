@@ -2,6 +2,6 @@ Partiendo de la configuración publicada en este [post](https://comunidad.movist
 
 Además he añadido configuración para que las llamadas entrantes se envíen a todas les extensiones internas.
 
-Para adaptarenla configuración a vuestra centralita, basta con sustituir el número 9999999999 por vuestro número de teléfono y reiniciar el servicio de asterisk.
+Para adaptarenla configuración a vuestra centralita, basta con sustituir el número 999999999 por vuestro número de teléfono y reiniciar el servicio de asterisk.
 
 Espero que sea útil para alguien.
