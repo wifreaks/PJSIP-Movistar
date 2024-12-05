@@ -4,7 +4,7 @@ Además he añadido configuración para que las llamadas entrantes se envíen a 
 
 Para adaptar en la configuración a vuestra centralita, basta con sustituir el número 999999999 por vuestro número de teléfono y reiniciar el servicio de asterisk.
 
-Os dejo también los pasos y comandos que uso para compilar Asterisk desde código fuente partiendo de una debian básica, que és el método que yo uso para montar cada centralita.
+Os dejo también [los pasos y comandos](https://github.com/wifreaks/PJSIP-Movistar/blob/main/Instructions) que uso para compilar Asterisk desde código fuente partiendo de una debian básica, que és el método que yo uso para montar cada centralita.
 
 
 
