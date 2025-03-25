@@ -11,6 +11,7 @@ sudo apt-get install  libncurses5-dev uuid-dev libjansson-dev libxml2-dev libsql
 
 # Compilación de código fuente y primer arranque de Asterisk
 sudo ./configure --with-pjproject-bundled
+sudo contrib/scripts/get_mp3_source.sh
 sudo make menuselect
 sudo make install
 sudo make samples
