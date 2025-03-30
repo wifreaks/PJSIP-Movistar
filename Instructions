@@ -7,7 +7,8 @@ cd asterisk/
 sudo contrib/scripts/install_prereq install
 sudo apt-get install unixodbc unixodbc-dev libmyodbc python-dev python-pip python-mysqldb
 sudo apt-get install build-essential libncurses5-dev uuid-dev libjansson-dev libxml2-dev libsqlite3-dev
-sudo apt-get install  libncurses5-dev uuid-dev libjansson-dev libxml2-dev libsqlite3-dev
+sudo apt-get install libncurses5-dev uuid-dev libjansson-dev libxml2-dev libsqlite3-dev
+sudo apt-get install build-essential dh-autoreconf
 
 # Compilación de código fuente y primer arranque de Asterisk
 sudo ./configure --with-pjproject-bundled
@@ -21,6 +22,24 @@ asterisk -gvc
 sudo asterisk -gvc
 sudo systemctl start asterisk
 sudo systemctl status asterisk
+
+# Compilación codec G.729A El CFLAG es para RPi4, verificar que sea el correcto al modelo de Rapsberry)
+sudo cd /usr/local/src
+sudo wget http://download-mirror.savannah.gnu.org/releases/linphone/plugins/sources/bcg729-1.0.2.tar.gz
+sudo tar xzf bcg729-1.0.2.tar.gz
+sudo cd bcg729-1.0.2
+sudo ./configure --libdir=/lib
+sudo make
+sudo make install
+
+sudo cd /usr/local/src
+sudo wget http://asterisk.hosting.lv/src/asterisk-g72x-1.4.3.tar.bz2
+sudo tar -jxvf asterisk-g72x-1.4.3.tar.bz2
+sudo cd asterisk-g72x-1.4.3
+sudo ./autogen.sh
+sudo ./configure CFLAGS='-march=armv8-a' --with-bcg729 --with-asterisk-includes=/usr/include
+sudo make
+sudo make install
 
 # Guardo una cópia de los ficheros de configuración de muestra y escribo los nuevos con mi configuración
 cd /etc/asterisk/
