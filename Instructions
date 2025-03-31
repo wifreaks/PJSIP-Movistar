@@ -15,6 +15,7 @@ sudo ./configure --with-pjproject-bundled
 sudo contrib/scripts/get_mp3_source.sh
 sudo make menuselect
 sudo make install
+sudo make install-headers
 sudo make samples
 sudo make config
 make install-logrotate
