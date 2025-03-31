@@ -49,6 +49,10 @@ sudo vim.tiny /etc/asterisk/pjsip.conf
 sudo mv /etc/asterisk/extensions.conf /etc/asterisk/extensions.conf.sample
 sudo vim.tiny /etc/asterisk/extensions.conf
 
+# Añadir a los ficheros de configuración de CDR y CEL la configuración de RADIUS y descomentar la sección de RADIUS en CDR
+echo "radiuscfg => /etc/radcli/radiusclient.conf" >> /etc/asterisk/cdr.conf
+echo "radiuscfg => /etc/radcli/radiusclient.conf" >> /etc/asterisk/cel.conf
+
 # Reiniciar servicios y verificar
 sudo systemctl restart asterisk
 sudo systemctl status asterisk
